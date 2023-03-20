@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import useFormState from "./Customhooks/useFormState";
+import { useInView } from "react-intersection-observer";
 
 export default function Contact() {
   const [name, handleName, resetName] = useFormState("");
   const [email, handleEmail, resetEmail] = useFormState("");
   const [message, handleMessage, resetMessage] = useFormState("");
+  const { ref: contactRef, inView: contactIsVisible } = useInView();
 
   function handleOnChange(e) {
     setName = (e) => {
@@ -21,19 +23,27 @@ export default function Contact() {
 
   return (
     <div
-      class="h-screen w-screen flex items-center background-image:h-14 bg-gradient-to-r from-sky-500 via-purple-500 to-indigo-500 justify-center items-center "
+      class="h-screen w-screen flex items-center background-image:h-14 bg-gradient-to-r from-sky-500 via-purple-500 to-indigo-500 justify-center items-center"
       id="contact-section"
     >
-      <div class="max-w-lg ">
+      <div
+        ref={contactRef}
+        className={`w-5/6 xl:max-w-lg  ${
+          contactIsVisible ? "animate-fastPop" : ""
+        }`}
+      >
         <h1 class="text-neutral-100 text-center">Contact Me </h1>
         <br></br>
-        <h3 class="text-neutral-100">
+        <h3 class="text-neutral-100 text-xs xl:text-lg">
           Please feel free to contact me if there is any questions or if you
           would like to work together. Leave a message along with some of your
           details so that I can reach you.
         </h3>
         <form onSubmit={handleSubmit}>
-          <label class="text-neutral-100" for="name">
+          <label
+            class="text-neutral-100 text-neutral-100 text-xs xl:text-lg"
+            for="name"
+          >
             Name
           </label>
           <br></br>
@@ -45,7 +55,7 @@ export default function Contact() {
             onChange={handleName}
           ></input>
           <br></br>
-          <label class="text-neutral-100" for="email">
+          <label class="text-neutral-100 text-xs xl:text-lg" for="email">
             Email
           </label>
           <br></br>
@@ -58,7 +68,7 @@ export default function Contact() {
           ></input>
           <br></br>
           <br></br>
-          <label class="text-neutral-100" for="message">
+          <label class="text-neutral-100 text-xs xl:text-lg" for="message">
             Message
           </label>
           <br></br>

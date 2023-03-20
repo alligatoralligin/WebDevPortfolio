@@ -7,9 +7,9 @@ export default function Navbar2() {
   return (
     <nav class="relative flex max-w-full flex-wrap items-center justify-between bg-transparent py-3 text-neutral-500 shadow-lg hover:text-neutral-700 focus:text-neutral-700 dark:bg-neutral-600">
       <div class="flex w-screen flex-wrap items-center justify-between px-6">
-        <div>
+        <div class="block w-screen xl:flex xl:w-52 ">
           <a
-            class="text-2xl text-neutral-100 dark:text-neutral-200 animate-pop "
+            class="text-2xl text-neutral-100 dark:text-neutral-200 animate-pop"
             href="#"
           >
             Alex Duong

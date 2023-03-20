@@ -16,12 +16,14 @@ import Contact from "./Contact";
 
 function App() {
   return (
-    <div>
-      <Biography></Biography>
-      <Skills></Skills>
-      <Projects />
-      <CurrentProjects />
-      <Contact></Contact>
+    <div class="absolute inset-0">
+      <div>
+        <Biography></Biography>
+        <Skills></Skills>
+        <Projects />
+        <CurrentProjects />
+        <Contact></Contact>
+      </div>
     </div>
   );
 }

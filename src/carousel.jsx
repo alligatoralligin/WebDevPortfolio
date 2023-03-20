@@ -1,10 +1,11 @@
 import React from "react";
+import PH1 from "./assets/Placeholders/placeholder1.jpg";
 
 export default function Carousel() {
   return (
     <div
       id="carouselExampleControls"
-      class="relative max-w-7xl"
+      class="relative max-w-4xl block"
       data-te-carousel-init
       data-te-carousel-slide
     >

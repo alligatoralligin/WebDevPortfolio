@@ -27,23 +27,31 @@ const iconArray = [
 for (let i = 0; i < iconArray.length; i++) {
   displayIcons.push(
     <img
-      class="object-scale-down inline hover:scale-125"
+      class={`object-scale-down inline hover:scale-125 animate-fastPop`}
       src={iconArray[i]}
     ></img>
   );
 }
 export default function Skills() {
   const { ref: boxRef, inView: boxisVisible } = useInView();
+  const { ref: skillRef, inView: skillIsVisible } = useInView();
   return (
     <div
-      class="h-screen w-screen flex items-center background-image:h-14 bg-gradient-to-r from-sky-500 via-purple-500 to-indigo-500"
+      class="h-screen w-screen flex items-center background-image:h-14 bg-gradient-to-r from-sky-500 via-purple-500 to-indigo-500 flex-col xl:flex-row"
       id="skills-section"
     >
-      <div class="w-screen ml-56 max-w-md mr-96">
+      <div
+        ref={skillRef}
+        className={`w-screen xl:ml-56 max-w-md xl:mr-96 mt-5 xl:mt-0 text-center xl:text-left overflow-hidden ml-44 xl:right-3/4 xl:absolute ml-0 ${
+          skillIsVisible
+            ? "xl:translate-x-700 xl:transition xl:duration-[1750ms]"
+            : ""
+        }`}
+      >
         <br></br>
         <br></br>
         <h2 class="text-neutral-100 text-xl underline font-bold">Education</h2>
-        <h2 class="text-neutral-100">
+        <h2 class="text-neutral-100 mb-0">
           <br></br>
           Graduated from University of Toronto BSC Psychology
           <br></br>
@@ -52,7 +60,7 @@ export default function Skills() {
           The Modern React Bootcamp -Colt Steele
         </h2>
         <br></br>
-        <h2 class="text-neutral-100 text-xl underline font-bold ">
+        <h2 class="text-neutral-100 text-xl underline font-bold">
           Technologies
         </h2>
         <h2 class="text-neutral-100 text-lg underline font-bold">Frontend</h2>
@@ -67,7 +75,7 @@ export default function Skills() {
 
       <div
         ref={boxRef}
-        className={`box-border h-96 w-96 p-4 border-4 object-contain grid grid-cols-3 gap-5 justify-between ${
+        className={`box-border h-96 w-96 p-4 border-4 object-contain grid grid-cols-3 gap-5  justify-between xl:absolute xl:left-[1050px] mt-10 ${
           boxisVisible ? "animate-borderAni" : ""
         }`}
       >

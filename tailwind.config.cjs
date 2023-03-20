@@ -11,6 +11,9 @@ module.exports = {
       maxHeight: {
         35: "40%",
       },
+      translate: {
+        700: "700px",
+      },
       keyframes: {
         typing: {
           "0%": { width: "0%" },
@@ -28,11 +31,17 @@ module.exports = {
           "0%": { borderColor: "transparent" },
           "100%": { borderColor: "visible" },
         },
+        borderTB: {
+          "0%": { width: "0%" },
+          "100%": { width: "80%" },
+        },
       },
       animation: {
         typing: "typing 4s steps(30,end),blink .75s step-end infinite",
         pop: "pop 4s",
+        fastPop: "pop 2s",
         borderAni: "borderAni 6s",
+        borderTB: "borderTB 6s,ease-in",
       },
     },
   },

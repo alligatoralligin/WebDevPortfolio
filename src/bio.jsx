@@ -12,14 +12,14 @@ export default function Biography() {
         <div class="w-2/4 ">
           <h1
             ref={headerRef}
-            className={`text-neutral-100 overflow-hidden inline-block xl:whitespace-nowrap ${
+            className={`text-neutral-100 overflow-hidden inline-block xl:whitespace-nowrap xl:xl:text-5xl ${
               headerisVisible ? "animate-typing" : ""
             }`}
           >
             Hello this is Alex, Frontend Dev
           </h1>
           <br></br>
-          <p class="text-neutral-100 animate-typingmulti">
+          <p class="text-neutral-100 animate-typingmulti xl:text-xl">
             I am a Frontend Developer that is seeking a role where I can build
             practical websites and to provide solutions to increasingly complex
             problems. I mainly work with the MERN stack however I am willing to

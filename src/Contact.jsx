@@ -31,7 +31,7 @@ export default function Contact() {
           contactIsVisible ? "animate-fastPop" : ""
         }`}
       >
-        <h1 class="text-neutral-100 text-center">Contact Me </h1>
+        <h1 class="text-neutral-100 text-center xl:text-3xl">Contact Me </h1>
         <br></br>
         <h3 class="text-neutral-100 text-xs xl:text-lg">
           Please feel free to contact me if there is any questions or if you

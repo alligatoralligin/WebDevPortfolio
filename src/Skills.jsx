@@ -42,7 +42,7 @@ export default function Skills() {
     >
       <div
         ref={skillRef}
-        className={`w-screen xl:ml-56 max-w-md xl:mr-96 mt-5 xl:mt-0 text-center xl:text-left overflow-hidden ml-44 xl:right-3/4 xl:absolute ml-0 ${
+        className={`w-screen xl:ml-56 max-w-md xl:mr-96 mt-5 xl:mt-0 text-center xl:text-left overflow-hidden ml-0 xl:right-3/4 xl:absolute  ${
           skillIsVisible
             ? "xl:translate-x-700 xl:transition xl:duration-[1750ms]"
             : ""

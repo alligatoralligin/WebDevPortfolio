@@ -86,7 +86,8 @@ export default function Projects() {
             ModalFeatures={[
               "Check the weather, wind speed and temperature in different cities",
               "Weather is updated hourly",
-              "Contains Style breakpoints for mobile devices",
+              "WeatherApp makes two separate Api calls, the first one gets the geocode of the location and the second api call contains the weather data",
+              "Contains style breakpoints for mobile devices",
             ]}
           ></Modal>
         </div>

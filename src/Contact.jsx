@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import useFormState from "./Customhooks/useFormState";
 import { useInView } from "react-intersection-observer";
+import { useForm } from "@formspree/react";
 
 export default function Contact() {
   const [name, handleName, resetName] = useFormState("");
   const [email, handleEmail, resetEmail] = useFormState("");
   const [message, handleMessage, resetMessage] = useFormState("");
   const { ref: contactRef, inView: contactIsVisible } = useInView();
+  const [state, handleSubmit] = useForm("xvonbzjb");
 
   function handleOnChange(e) {
     setName = (e) => {
@@ -14,12 +16,9 @@ export default function Contact() {
     };
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    resetEmail();
-    resetMessage();
-    resetName();
-  };
+  if (state.succeeded) {
+    return <div>Thank you for submitting your message!</div>;
+  }
 
   return (
     <div
@@ -43,6 +42,7 @@ export default function Contact() {
           <label
             class="text-neutral-100 text-neutral-100 text-xs xl:text-lg"
             for="name"
+            htmlFor="name"
           >
             Name
           </label>
@@ -51,24 +51,34 @@ export default function Contact() {
             class="w-full"
             type="text"
             id="name"
+            name="name"
             value={name}
             onChange={handleName}
           ></input>
           <br></br>
-          <label class="text-neutral-100 text-xs xl:text-lg" for="email">
+          <label
+            class="text-neutral-100 text-xs xl:text-lg"
+            for="email"
+            htmlFor="email"
+          >
             Email
           </label>
           <br></br>
           <input
             class="w-full"
-            type="text"
+            type="email"
             id="email"
+            name="email"
             value={email}
             onChange={handleEmail}
           ></input>
           <br></br>
           <br></br>
-          <label class="text-neutral-100 text-xs xl:text-lg" for="message">
+          <label
+            class="text-neutral-100 text-xs xl:text-lg"
+            for="message"
+            htmlFor="message"
+          >
             Message
           </label>
           <br></br>
@@ -83,7 +93,13 @@ export default function Contact() {
           ></textarea>
           <br></br>
           <br></br>
-          <button>Submit</button>
+          <button
+            class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            type="submit"
+            disabled={state.submitting}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>

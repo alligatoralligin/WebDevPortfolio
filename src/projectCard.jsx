@@ -1,6 +1,7 @@
 import React from "react";
 import gitHubIcon from "./assets/github50-icon-static.png";
 import { useInView } from "react-intersection-observer";
+import Carousel from "./carousel";
 
 export default function ProjectCard(props) {
   let iconsArray = [];
@@ -14,20 +15,26 @@ export default function ProjectCard(props) {
     );
   }
   return (
-    <div class="w-11/12 xl:max-h-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 xl:m-7 mr-7 ml-5 hover:scale-95">
-      <a className="xl:max-w-256 h-4/5">
-        <img
+    <div class="w-11/12 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 xl:m-7 mr-7 ml-5 hover:scale-95 container h-auto">
+      <a className="xl:max-w-256 m-h-full">
+        {/* <img
           class="object-scale-down w-full max-h-35 h-5/6 m-0 w-256 h-125 cursor-pointer"
           src={props.Picture}
-        ></img>
+        ></img> */}
+        <Carousel
+          UniqueDisplay={props.UniqueDisplay}
+          Pictures={props.Pictures}
+        ></Carousel>
       </a>
-      <div class="xl:p-5 xl:ml-12 xl:mt-5">
+      <div class="xl:p-5 xl:ml-12 xl:mt-5 ">
         <a href="#">
           <h5
             class="mb-2 text-sm xl:text-2xl font-bold tracking-tight text-gray-900 dark:text-white
             "
           >
             {props.title}
+            <br></br>
+            {props.siteLink}
           </h5>
         </a>
         <p class="mb-3 text-sm xl:text-lg font-normal w-56 text-gray-700 dark:text-gray-400">

@@ -23,13 +23,29 @@ const iconArray = [
   htmlIconStatic,
   cssIconStatic,
 ];
-
+const ArrayNames = [
+  "Javascript",
+  "React",
+  "MongoDB",
+  "Bootstrap",
+  "MUI",
+  "Node",
+  "Tailwind",
+  "HTML",
+  "CSS",
+];
 for (let i = 0; i < iconArray.length; i++) {
   displayIcons.push(
-    <img
-      class={`object-scale-down inline hover:scale-125 animate-fastPop`}
-      src={iconArray[i]}
-    ></img>
+    <div class="group relative flex justify-center">
+      <img
+        class={`object-scale-down inline hover:scale-125 animate-fastPop`}
+        src={iconArray[i]}
+      ></img>
+
+      <span class="absolute top-20 scale-0 rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">
+        {ArrayNames[i]}
+      </span>
+    </div>
   );
 }
 export default function Skills() {
@@ -37,14 +53,14 @@ export default function Skills() {
   const { ref: skillRef, inView: skillIsVisible } = useInView();
   return (
     <div
-      class="h-screen w-screen flex items-center background-image:h-14 bg-gradient-to-r from-sky-500 via-purple-500 to-indigo-500 flex-col xl:flex-row"
+      class="grid grid-cols-2 gap-96 h-screen w-screen items-center background-image:h-14 bg-gradient-to-r from-sky-500 via-purple-500 to-indigo-500 "
       id="skills-section"
     >
       <div
         ref={skillRef}
-        className={`w-screen xl:ml-56 max-w-md xl:mr-96 mt-5 xl:mt-0 text-center xl:text-left overflow-hidden ml-0 xl:right-3/4 xl:absolute  ${
+        className={` mt-5 xl:mt-0 xl:text-left overflow-hidden  ${
           skillIsVisible
-            ? "xl:translate-x-700 xl:transition xl:duration-[1750ms]"
+            ? "xl:translate-x-2/4 xl:transition xl:duration-[1750ms]"
             : ""
         }`}
       >
@@ -75,7 +91,7 @@ export default function Skills() {
 
       <div
         ref={boxRef}
-        className={`box-border h-96 w-96 p-4 border-4 object-contain grid grid-cols-3 gap-5  justify-between xl:absolute xl:left-[1050px] mt-10 ${
+        className={`box-border h-96 w-96 p-4 border-4 object-contain grid grid-cols-3 gap-5   mt-10 ${
           boxisVisible ? "animate-borderAni" : ""
         }`}
       >

@@ -41,7 +41,6 @@ export default function Contact() {
         <form onSubmit={handleSubmit}>
           <label
             class="text-neutral-100 text-neutral-100 text-xs xl:text-lg"
-            for="name"
             htmlFor="name"
           >
             Name

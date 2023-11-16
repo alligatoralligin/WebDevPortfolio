@@ -15,6 +15,7 @@
     "@formspree/react": "^2.4.1",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
+    "browserslist": "^4.22.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.4.3",

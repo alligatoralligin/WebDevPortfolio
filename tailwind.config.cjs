@@ -11,6 +11,13 @@ module.exports = {
       maxHeight: {
         35: "40%",
       },
+      height: {
+        75: "75",
+        500: "500px",
+      },
+      width: {
+        500: "500px",
+      },
       translate: {
         700: "700px",
       },

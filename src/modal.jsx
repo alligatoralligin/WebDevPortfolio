@@ -10,7 +10,7 @@ export default function Modal(props) {
       data-te-modal-init
       class="fixed top-0 left-0 z-[1055] hidden h-full w-full overflow-y-auto overflow-x-hidden outline-none"
       id={props.ModalID}
-      tabindex="-1"
+      tabIndex="-1"
       aria-labelledby={props.ModalID}
       aria-modal="true"
       role="dialog"

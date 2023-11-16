@@ -7,6 +7,7 @@ import Navbar2 from "./navbar2";
 import Projects from "./projects";
 import CurrentProjects from "./currentProjects";
 import Contact from "./Contact";
+import Projects2 from "./projects2";
 
 // ~Layout
 //Ideally the portfolio does not make use of the default navbar, using something similar to a list at different breakpoints of one page
@@ -17,10 +18,10 @@ import Contact from "./Contact";
 function App() {
   return (
     <div class="absolute inset-0">
-      <div>
+      <div class="overflow-x-hidden">
         <Biography></Biography>
         <Skills></Skills>
-        <Projects />
+        <Projects2 />
         <CurrentProjects />
         <Contact></Contact>
       </div>

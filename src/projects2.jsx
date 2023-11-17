@@ -5,6 +5,7 @@ import MMpic2 from "./assets/Project screenshots/MaximumMunchpic2.png";
 import weatherAppPic from "./assets/Project screenshots/weather-app-torontosc.png";
 import weatherAppPic2 from "./assets/Project screenshots/WeatherAppsc2.png";
 import todoAppPic from "./assets/Project screenshots/todo-app-screenshot.png";
+import CRMMERNPic from "./assets/Project screenshots/CRMsc1.png";
 export default function Projects2() {
   return (
     <div
@@ -22,8 +23,8 @@ export default function Projects2() {
         link={"https://alligatoralligin.github.io/weather-app/"}
       ></ProjectCard2>
       <ProjectCard2
-        picture={todoAppPic}
-        title="Todo App"
+        picture={CRMMERNPic}
+        title="CRM-MERN"
         link={"#"}
       ></ProjectCard2>
     </div>
